@@ -195,10 +195,6 @@ brew install gnu-sed
         os_icon
         dir
         vcs
-        newline
-        prompt_char
-    )
-    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
         status
         command_execution_time
         background_jobs
@@ -207,7 +203,10 @@ brew install gnu-sed
         virtualenv
         pyenv
         vim_shell
-        time
+        newline
+        prompt_char
+    )
+    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
         newline
     )
 
