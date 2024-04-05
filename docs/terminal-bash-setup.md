@@ -44,10 +44,8 @@ If you decide to do it on your own:
 
     ```bash
     if [[ "$(/usr/bin/uname -m)" == "arm64" ]]; then
-        # ARM macOS
         HOMEBREW_PREFIX="/opt/homebrew"
     else
-        # Intel macOS
         HOMEBREW_PREFIX="/usr/local"
     fi
 
@@ -80,7 +78,6 @@ If you decide to do it on your own:
 
     ```bash
     bash --version
-    # GNU bash, version 5.0.11(1)-release
     ```
 
 ## Improve Bash theme
