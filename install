@@ -4,7 +4,7 @@
 #
 # Copyright (c) Marcos Gomes Borges
 
-VERSION="1.5.7"
+VERSION="1.5.8"
 PREFIX="${HOME}"
 
 # Homebrew
@@ -39,7 +39,7 @@ cat <<EOF
     gitconfig       Set up Git
     bash            Update and set up Bash as the default shell
     bashconfig      Improve Bash
-    zsh             Setup Oh My Zsh + Powerlevel9k + Nerd font
+    zsh             Setup Oh My Zsh + Powerlevel10k + Nerd font
     python310       Install Pyenv and Python 3.10.7
     pypackages      Install Python packages for data science
     vscode          Set up VS Code and install extensions
@@ -218,11 +218,6 @@ if [[ -f "$(brew --prefix)/etc/bash_completion.d/git-prompt.sh" ]]; then
     source "$(brew --prefix)/etc/bash_completion.d/git-prompt.sh"
 fi
 
-# exa is a replacement for ls https://github.com/ogham/exa
-if type exa 1>/dev/null 2>&1; then
-    alias ls="exa --icons --group-directories-first --classify"
-fi
-
 # Python virtual environment
 # Allow pip only for active virtual environment
 # Use 'gpip' for global environment
@@ -270,9 +265,6 @@ devsetup_bash_config() {
 
     printf "${magenta}" "Install docker command-line completion\n"
     brew install docker-completion docker-machine-completion docker-compose-completion
-
-    printf "${magenta}" "Install exa\n"
-    brew install exa
 
     printf "${green}" "\nBash setup completed.\n"
 }
@@ -406,11 +398,6 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 ############################################################
 
-# exa is a replacement for ls https://github.com/ogham/exa
-if type exa 1>/dev/null 2>&1; then
-    alias ls="exa --icons --group-directories-first --classify"
-fi
-
 # Python virtual environment
 # Allow pip only for active virtual environment
 # Use 'gpip' for global environment
@@ -426,11 +413,6 @@ if type pyenv 1>/dev/null 2>&1; then
     pyenv virtualenvwrapper
 fi
 
-# Pygments
-if type pygmentize 1>/dev/null 2>&1; then
-    export LESSOPEN='|pygmentize -g %s'
-fi
-
 # Keep compatible with GNU Linux
 export PATH="${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="${HOMEBREW_PREFIX}/opt/findutils/libexec/gnubin:$PATH"
@@ -442,7 +424,7 @@ set -e
 ###############################################################################
 
 devsetup_install_zsh() {
-    printf "${magenta}" "Set up Oh My Zsh + Powerlevel9k + Nerd font\n"
+    printf "${magenta}" "Set up Oh My Zsh + Powerlevel10k + Nerd font\n"
 
     homebrew_update
 
@@ -482,12 +464,6 @@ devsetup_install_zsh() {
     URL="https://github.com/zsh-users/zsh-syntax-highlighting.git"
     DIR="${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
     git clone "${URL}" "${DIR}"
-
-    printf "${magenta}" "Install exa\n"
-    brew install exa
-
-    printf "${magenta}" "Install Pygments\n"
-    brew install pygments
 
     #Keep script compatibility with GNU Linux
     printf "${magenta}" "Install coreutils findutils gnu-tar gnu-sed\n"

@@ -334,6 +334,6 @@ The source code is licensed under the [MIT license](LICENSE.md).
 
 The content of this project itself is licensed under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0).
 
-[release-doc-shield]: https://img.shields.io/badge/Doc-01--Feb--2023-blue
+[release-doc-shield]: https://img.shields.io/badge/Doc-06--Apr--2024-blue
 [release-install-shield]: https://img.shields.io/badge/dynamic/json?color=blue&label=Release&prefix=install-&query=$.release&url=https://raw.githubusercontent.com/borgesnotes/mac-setup/master/package.json
 [license-shield]: https://img.shields.io/github/license/borgesnotes/mac-setup

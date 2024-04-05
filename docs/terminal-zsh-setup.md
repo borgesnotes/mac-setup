@@ -6,7 +6,7 @@ The Z shell ([Zsh](https://www.zsh.org)) is a Unix shell that can be used as an 
 
 Zsh is an extended Bourne shell with many improvements, including some features of Bash, Korn shell (ksh), and tcsh.
 
-## Terminal theme - Oh My Zsh + Powerlevel9k + Nerd font
+## Terminal theme - Oh My Zsh + Powerlevel10k + Nerd font
 
 The standard macOS Terminal appearance is just boring. Apple included a few nice preset themes too, but to really make your terminal appearance stand out you need to customize it yourself.
 
@@ -26,10 +26,8 @@ bash <(curl -fsSL raw.githubusercontent.com/borgesnotes/mac-setup/master/install
 
     ```bash
     if [[ "$(/usr/bin/uname -m)" == "arm64" ]]; then
-        # ARM macOS
         HOMEBREW_PREFIX="/opt/homebrew"
     else
-        # Intel macOS
         HOMEBREW_PREFIX="/usr/local"
     fi
 
@@ -62,8 +60,6 @@ bash <(curl -fsSL raw.githubusercontent.com/borgesnotes/mac-setup/master/install
 
     ```bash
     zsh --version
-
-    # zsh 5.8 (x86_64-apple-darwin20.1.0)
     ```
 
 ## Install Oh My Zsh
@@ -71,7 +67,7 @@ bash <(curl -fsSL raw.githubusercontent.com/borgesnotes/mac-setup/master/install
 [Oh My Zsh](https://ohmyz.sh/) is an open source, community-driven framework for managing your zsh configuration.
 
 ```bash
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 You can upgrade it to get the latest features it offers:
@@ -134,35 +130,12 @@ DIR="${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
 git clone "${URL}" "${DIR}"
 ```
 
-### Install exa (optional)
-
-[exa](https://the.exa.website) is a replacement for ls written in Rust.
-
-```bash
-brew install exa
-```
-
-### Install pygmentize (optional)
-
-[Pygments](https://pygments.org) is a syntax highlighting engine written in Python. That means, it will take source code (or other markup) in a supported language and output a processed version (in different formats) containing syntax highlighting markup.
-
-```bash
-brew install pygments
-```
-
 ### Keep script compatibility with GNU Linux (optional)
 
 ```bash
-# Install coreutils
 brew install coreutils
-
-# Install findutils
 brew install findutils
-
-# Install gnu-tar
 brew install gnu-tar
-
-# Install gnu-sed
 brew install gnu-sed
 ```
 
@@ -186,10 +159,8 @@ brew install gnu-sed
 
     # Homebrew
     if [[ "$(/usr/bin/uname -m)" == "arm64" ]]; then
-        # ARM macOS
         HOMEBREW_PREFIX="/opt/homebrew"
     else
-        # Intel macOS
         HOMEBREW_PREFIX="/usr/local"
     fi
 
@@ -280,11 +251,6 @@ brew install gnu-sed
     # User configuration
     ############################################################
 
-    # exa is a replacement for ls https://github.com/ogham/exa
-    if type exa 1>/dev/null 2>&1; then
-        alias ls="exa --icons --group-directories-first --classify"
-    fi
-
     # Python virtual environment
     # Allow pip only for active virtual environment
     # Use 'gpip' for global environment
@@ -298,11 +264,6 @@ brew install gnu-sed
         eval "$(pyenv init --path)"
         eval "$(pyenv init -)"
         pyenv virtualenvwrapper
-    fi
-
-    # Pygments
-    if type pygmentize 1>/dev/null 2>&1; then
-        export LESSOPEN='|pygmentize -g %s'
     fi
 
     # Keep compatible with GNU Linux
