@@ -16,32 +16,20 @@ To edit the VS Code settings:
 2. Then select the option `Preferences: Open Settings (JSON)`
 3. Check out my personal VS Code settings
 
-    Required only if you use Oh My Zsh + Powerlevel9k + Nerd font:
-
-    ```json
-    "terminal.integrated.fontFamily": "Hack Nerd Font",
-    ```
-
-    General settings:
-
    ```json
+    "terminal.integrated.fontFamily": "Hack Nerd Font",
     "terminal.integrated.fontSize": 14,
 
     "window.zoomLevel": 0,
-
-    "editor.fontSize": 16,
+   
+    "editor.fontSize": 14,
     "editor.rulers": [80, 120],
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
     "editor.wordWrap":"on",
-
-    "[markdown]": {
-        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
-    },
-    "markdown-pdf.highlightStyle": "github.css",
     "cSpell.language": "en,fr",
 
-    "python.venvPath": "~/.virtualenvs/",
+    "markdown-preview-github-styles.colorTheme": "light",
    ```
 
 ## Add VS Code command to Terminal
@@ -60,12 +48,10 @@ You will be able to type `code .` in any folder to start editing files in that f
 Paste that in the terminal:
 
 ```bash
-# Set Code as default git editor
 git config --global core.editor 'code --wait'
 ```
 
 ```bash
-# Set Code as diff tool
 git config --global diff.tool vscode
 git config --global difftool.vscode.cmd 'code --wait --diff $LOCAL $REMOTE'
 ```
