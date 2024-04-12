@@ -388,10 +388,10 @@ code --install-extension ms-vscode.cpptools
 
 ![Go](../assets/vs-code-go.png?raw=true)
 
-[Go](https://marketplace.visualstudio.com/items?itemName=ms-vscode.Go) language support for Visual Studio Code.
+[Go](https://marketplace.visualstudio.com/items?itemName=golang.Go) language support for Visual Studio Code.
 
 ```bash
-code --install-extension ms-vscode.Go
+code --install-extension golang.Go
 ```
 
 ## Java by Red Hat
